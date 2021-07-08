@@ -1,30 +1,23 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div id="cvr-paa-virk">
+    <div class="layout">
+      <a id="skip-nav" href="#main-content" class="sr-only">
+        Gå direkte til indhold
+      </a>
+      <Header></Header>
+    </div>
   </div>
-  <router-view />
 </template>
+<script lang="ts">
+import { Options } from "vue-class-component";
+import Header from "@/components/global/Header.vue";
+import VueBase from "@/VueBase.vue";
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+@Options({
+  components: {
+    Header,
+  },
+})
+export default class App extends VueBase {}
+</script>
+<style lang="scss"></style>
